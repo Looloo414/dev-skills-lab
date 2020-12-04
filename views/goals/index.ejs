@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+<h1>Goals as of <%= time %></h1>
+<ul>
+  <% goals.forEach(function(g) { %>
+    <li>
+      <form action="/goals/<%= g.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">X</button>
+      </form>
+      <a href="/goals/<%= g.id %>"><%= g.goal %></a>
+        - 
+      <%= g.done ? 'done' : 'not done' %>
+    </li>
+  <% }); %>
+</ul>
+<a href="/goals/new">Add Goal</a>
+</body>
+</html>
