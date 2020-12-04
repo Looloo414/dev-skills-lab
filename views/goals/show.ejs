@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Document</title>
 </head>
 <body>
   <h1>Goal #<%= goal.id %></h1>
   <h3><%= goal.goal %></h3>
   <h3>Complete: <%= goal.done ? 'Yes' : 'No' %></h3>
-  <a href="/todos/<%= goal.id %>/edit">Edit Goals</a><br>
+  <a href="/goals/<%= goal.id %>/edit">Edit Goals</a><br>
   <a href="/goals">Back to Goals</a>
 </body>
 </html>
